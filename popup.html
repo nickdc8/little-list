@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A quiet place for the things you need to do. A simple Chrome extension with Google account sync.">
+  <title>Little List</title>
+  <link rel="icon" href="icons/icon-32.png">
+  <link rel="stylesheet" href="popup.css">
+  <script type="module" src="popup.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="heading"><h1>Little List</h1><button id="expand" class="icon-button" title="Open in a tab" aria-label="Open in a tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M10 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5"/></svg></button></div>
+      <p id="summary">Loading your list…</p>
+      <form id="add-form">
+        <label class="sr-only" for="new-task">New task</label>
+        <div class="add-field"><input id="new-task" maxlength="240" placeholder="What needs doing?" autocomplete="off" autofocus required disabled><button id="add" type="submit" aria-label="Add task" title="Add task" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </form>
+    </header>
+    <nav aria-label="Filter tasks"><button data-filter="all" aria-pressed="true">All</button><button data-filter="active" aria-pressed="false">To do</button><button data-filter="done" aria-pressed="false">Done</button><button id="clear" disabled>Clear done</button></nav>
+    <main aria-label="Tasks"><ul id="tasks"></ul><div id="empty" class="empty" hidden><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="6" width="20" height="20" rx="6"/><path d="m11 16 3 3 7-7"/></svg><p id="empty-title">A little room to think.</p><span id="empty-detail">Add your first task above.</span></div></main>
+    <div id="feedback"><p id="status" role="status" aria-live="polite"></p><button id="retry" hidden>Retry</button></div>
+    <footer><span id="save-state">Stored in Chrome · syncs with your account</span><button id="sync-help" aria-expanded="false" aria-controls="sync-details">About sync</button></footer>
+    <section id="sync-details" hidden>
+      <h2>Your list, on your other computers.</h2>
+      <p>Sign into <strong>Chrome itself</strong> with your Google account and enable extension syncing in Chrome settings. Signing into Gmail in a tab is not enough.</p>
+      <p>Install this same extension on each computer. Tasks save offline and Chrome syncs them when it can. This app cannot check whether sync is enabled or confirm a cloud upload.</p>
+      <button id="sync-settings">Open Chrome sync settings <span aria-hidden="true">↗</span></button>
+      <p class="small">No Gmail access. No separate account. Up to 100 tasks.</p>
+    </section>
+  </div>
+</body>
+</html>

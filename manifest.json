@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Little List",
+  "version": "1.0.0",
+  "description": "A quiet place for things to do. A simple to-do list that syncs through your Google account in Chrome.",
+  "minimum_chrome_version": "102",
+  "permissions": [
+    "storage"
+  ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnFAN6Dh98uhZyJWgytd03EptxlGsoBmI48GgHdxFuGajZ4WctoORUhWqsbJjvIV2kk2yeSDwwpQeim8jQ8s4e8tdFiB4Po+bA6Z2Zowa/zYo3M+q3Fux5pin+jscCaiqXOndNF/uhgeHFppDfdoiK0JO6qQAiKZa9k0d12gAaEHtjvSFtdPV5n3G3PUqGELakSdZxVT/v5B5ZNPFAZFv1UdJ31++J8Vi8eVsrilw5xM9O7w/Wgc93zjfH9dXafMxfVXSS78HAlmGsl0i0W9J5MVm42LNVUQPAROsD4GX9W/7aozvK/uQxLYiLKVqb8WljdnbBvn4GBimPpZ7Jto/FQIDAQAB",
+  "action": {
+    "default_title": "Little List",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}
